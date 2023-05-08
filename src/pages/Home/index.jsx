@@ -1,10 +1,19 @@
 import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import "./style.scss";
 
 const index = () => {
    return (
-      <div>
-         <h1>Home</h1>
+      <div className='card p-5 shadow mx-auto w-75 mt-5'>
+        <ul className="p-4 bg-info d-flex justify-content-around w-25 list-unstyled">
+         <li className="text-uppercase"><NavLink to="/home/left">LEFT</NavLink></li>
+         <li className="text-uppercase"><NavLink to="/home/right">RIGHT</NavLink></li>
+        </ul>
+        <div className="row">
+            <div className="col p-5 shadow">
+               <Outlet/>
+            </div>
+        </div>
       </div>
    );
 };
